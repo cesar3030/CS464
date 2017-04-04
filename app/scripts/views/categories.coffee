@@ -12,8 +12,15 @@ class Cs464.Views.Categories extends Backbone.View
 
   events: {}
 
-  initialize: () ->
+  constructor: () ->
+    super
+    @model.on('sync', =>
+      @render()
+    )
+  # initialize: () ->
     #@listenTo @model, 'change', @render
 
   render: () ->
-    @$el.html @template#@template(@model.toJSON())
+    @$el.html @template(@model)
+    # alert(@model.toJSON())
+    

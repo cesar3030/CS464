@@ -1,7 +1,7 @@
 'use strict';
 
 class Cs464.Models.Categories extends Backbone.Model
-  url: '/server/categories.php',
+  url: 'http://localhost/server/categories.php',
 
   initialize: () ->
 
