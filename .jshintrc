@@ -17,8 +17,8 @@
   "strict": true,
   "jquery": true,
   "globals": {
-    "Cs464": true,
-    "cs-464": true,
+    "Project": true,
+    "project": true,
     "_": false,
     "Backbone": false,
     "JST": false,
