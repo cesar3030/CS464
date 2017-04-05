@@ -1,6 +1,6 @@
 # global beforeEach, describe, it, assert, expect
 "use strict"
 
-describe 'Categories Model', ->
+describe 'Category Model', ->
   beforeEach ->
-    @CategoriesModel = new Cs464.Models.Categories();
+    @CategoryModel = new Cs464.Models.Category();
