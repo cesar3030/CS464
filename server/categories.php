@@ -1,5 +1,6 @@
 <?php
 require ("config.php");
+
 try{
   $db = new PDO("mysql:host=".DB_HOST.";dbname=".DB_DATABASE, DB_USER, DB_PASSWORD);
 } catch (PDOException $e) {
@@ -17,8 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] == "GET"){
   
   $statement->setFetchMode(PDO::FETCH_ASSOC);
   echo json_encode($statement->fetchAll());
-  // $test = array('a' => $_GET['id']);
-  // echo json_encode($test);
-
 }
+
 ?>
