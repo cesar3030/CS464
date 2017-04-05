@@ -10,9 +10,9 @@ window.Cs464 =
 $ ->
   'use strict'
   Cs464.init();
-  collection = new Cs464.Collections.Categories()
+  collection = new Cs464.Collections.Users()
   
-  table = new Cs464.Views.CategoriesView
+  table = new Cs464.Views.UsersView
     collection: collection
 
 

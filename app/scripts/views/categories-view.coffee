@@ -12,7 +12,7 @@ class Cs464.Views.CategoriesView extends Backbone.View
     @render()
     @listenTo @collection, 'change', @render
     @listenTo @collection, 'add', @addCategory
-    @listenTo @collection, 'reset', this.addAllCategories    
+    @listenTo @collection, 'reset', @addAllCategories    
 
     @collection.fetch()
 
