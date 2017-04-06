@@ -11,6 +11,7 @@ NATURAL JOIN deliveries d
 WHERE d.address_id > 86
 AND d.type = '3 days';
 
+SELECT category_name, count(category_name) FROM products GROUP BY cathegory_name ORDER BY count(category_name) DESC;
 
 
 -- INSERT queries
