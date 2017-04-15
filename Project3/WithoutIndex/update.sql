@@ -20,7 +20,7 @@ INSERT INTO companies(company_name, hq_address, date_creation, country) VALUES("
 UPDATE categories SET deleted_at = CURRENT_TIMESTAMP() - INTERVAL 10 WEEK WHERE category_name = (SELECT category_name FROM (SELECT * FROM categories) as c LIMIT 1);
 
 
-UPDATE items A SET qunatity = (SELECT qunatity_in_stock FROM products WHERE product_id = A.product_id) WHERE EXISTS(SELECT 1 FROM products WHERE A.product_id = product_id AND A.quantity > quantity_in_stock);
+UPDATE items A SET quantity = (SELECT quantity_in_stock FROM products WHERE product_id = A.product_id) WHERE EXISTS(SELECT 1 FROM products WHERE A.product_id = product_id AND A.quantity > quantity_in_stock);
 
 
 DELETE FROM categories where TIMESTAMPDIFF(DAY, deleted_at, CURRENT_TIMESTAMP()) > 60;
