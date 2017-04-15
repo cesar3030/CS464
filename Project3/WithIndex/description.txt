@@ -70,7 +70,7 @@ UPDATE categories SET deleted_at = CURRENT_TIMESTAMP() - INTERVAL 10 WEEK WHERE 
 
 
 -- update an entry in the items if quantity is exceeding the qunatity_in_stock.
-UPDATE items A SET qunatity = (SELECT qunatity_in_stock FROM products WHERE product_id = A.product_id) WHERE EXISTS(SELECT 1 FROM products WHERE A.product_id = product_id AND A.quantity > quantity_in_stock);
+UPDATE items A SET quantity = (SELECT quantity_in_stock FROM products WHERE product_id = A.product_id) WHERE EXISTS(SELECT 1 FROM products WHERE A.product_id = product_id AND A.quantity > quantity_in_stock);
 
 
 -- DELETE queries
