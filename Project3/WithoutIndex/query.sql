@@ -15,7 +15,7 @@ AND i.quantity = 1;
 
 SELECT email FROM orders NATURAL JOIN items NATURAL JOIN products WHERE price >= ALL(SELECT price FROM products NATURAL JOIN items NATURAL JOIN orders);
 
-SELECT country AS "countries listed" FROM ((SELECT country FROM companies) UNION (SELECT country FROM demographics)) A;
+SELECT country AS "countries listed" FROM ((SELECT country FROM companies) UNION (SELECT country FROM demographics) UNION (SELECT country FROM addresses)) A;
 
 SELECT category_name, count(category_name) FROM products GROUP BY category_name ORDER BY count(category_name) DESC;
 
