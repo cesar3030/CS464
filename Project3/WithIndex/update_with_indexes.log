@@ -1,0 +1,16 @@
+mysql> source update.sql
+Query OK, 1 row affected (0.32 sec)
+
+Query OK, 1 row affected (0.10 sec)
+
+Query OK, 1 row affected (0.13 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 10 rows affected (0.12 sec)
+Rows matched: 10  Changed: 10  Warnings: 0
+
+Query OK, 1 row affected (0.09 sec)
+
+Query OK, 0 rows affected (0.13 sec)
+
+mysql> exit
