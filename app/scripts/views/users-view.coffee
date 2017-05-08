@@ -21,7 +21,6 @@ class Cs464.Views.UsersView extends Backbone.View
 
   addUser: (user) ->
     userView = new Cs464.Views.UserView({model: user})
-    console.log(userView.render())
     $(@el).find("tbody").append(userView.render())
 
   addAllUsers: () ->
