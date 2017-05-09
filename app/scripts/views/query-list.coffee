@@ -5,12 +5,6 @@ class Cs464.Views.QueryList extends Backbone.View
 
   template: JST['app/scripts/templates/query-list.ejs']
 
-  tagName: 'ul'
-
-  id: ''
-
-  className: 'nav nav-pills pull-right'
-
   events: {}
 
   constructor: (@queries) ->
