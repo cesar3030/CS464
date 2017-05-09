@@ -2,7 +2,7 @@
 
 class Cs464.Models.User extends Backbone.Model
   url: ->
-    if @.email then "http://localhost/server/users.php?email=" + @.email else "http://localhost/server/users.php"
+    if @.email then "/server/users.php?email=" + @.email else "/server/users.php"
 
 
   initialize: () ->

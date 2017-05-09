@@ -18,6 +18,7 @@ class Cs464.Views.TableView extends Backbone.View
     super()
 
   initialize: () ->
+    @render()
     # @listenTo @model, 'change', @render
 
   render: () ->

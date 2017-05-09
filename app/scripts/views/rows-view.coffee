@@ -22,7 +22,6 @@ class Cs464.Views.RowsView extends Backbone.View
     @listenTo @collection, 'add', @addRow
     @listenTo @collection, 'reset', @addAllRows   
 
-    @collection.fetch()
 
   render: () ->
     @$el.find('tbody').remove()

@@ -10,13 +10,18 @@ window.Cs464 =
 $ ->
   'use strict'
   Cs464.init();
-  collection = new Cs464.Collections.Users()
-  
-  # table = new Cs464.Views.UsersView
-  #   collection: collection
+  window.location.hash = ''
+  Backbone.history.stop()
 
-  table = new Cs464.Views.TableView(['Email','Date of birth'], ['email','date_birth'], collection)
-  table.render()
+  Backbone.history.start()
+  new Cs464.Routers.Users()
+  # collection = new Cs464.Collections.Users()
+  
+  # # table = new Cs464.Views.UsersView
+  # #   collection: collection
+
+  # table = new Cs464.Views.TableView(['Email','Date of birth'], ['email','date_birth'], collection)
+  # table.render()
   # header = new Cs464.Views.HeaderView([{name: "one"},{name: "two"},{name: "three"}])
   # header.render()
 
