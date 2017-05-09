@@ -27,6 +27,5 @@ class Cs464.Views.TableView extends Backbone.View
     $(@el).find('table').append(header.render())
 
     body = new Cs464.Views.RowsView(@modelAttributes, @collection)
-    #$(@el).find('table').append("<tbody></tbody>")#body.render()
-    console.log body.render()
+    $(@el).find('table').append(body.render())
     @

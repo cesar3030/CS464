@@ -2,7 +2,7 @@
 
 class Cs464.Views.RowsView extends Backbone.View
 
-  el: "#page"
+  #el: "#page"
 
   template: JST['app/scripts/templates/rows-view.ejs']
 
@@ -24,12 +24,16 @@ class Cs464.Views.RowsView extends Backbone.View
 
 
   render: () ->
-    @$el.find('tbody').remove()
-    @$el.find('table').append @template()
+    # @$el.find('tbody').remove()
+    # @$el.find('table').append @template()
+    @$el.html @template()
+
 
   addRow: (row) ->
     rowView = new Cs464.Views.RowView(@modelAttributes, row)
-    $(@el).find("tbody").append(rowView.render())
+    #$(@el).find("tbody").append(rowView.render())
+    $(@el).append(rowView.render())
+
 
   addAllRows: () ->
     @render()
