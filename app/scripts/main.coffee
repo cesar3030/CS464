@@ -15,6 +15,8 @@ $ ->
 
   Backbone.history.start()
   new Cs464.Routers.Users()
+  new Cs464.Routers.Products()
+  new Cs464.Routers.Orders()
   # collection = new Cs464.Collections.Users()
   
   # # table = new Cs464.Views.UsersView
