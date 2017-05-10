@@ -2,7 +2,7 @@
 
 class Cs464.Models.Category extends Backbone.Model
   url: ->
-    if @.category_name then "public_html/CS464/server/categories.php?category_name=" + @.category_name else window.serverUrl+"public_html/CS464/server/categories.php"
+    if @.category_name then "~am01780/CS464/server/categories.php?category_name=" + @.category_name else "~am01780/CS464/server/categories.php"
 
   initialize: () ->
 

@@ -2,7 +2,7 @@
 
 class Cs464.Models.Company extends Backbone.Model
   url: ->
-    if @.id then "/public_html/CS464/server/companies.php?id=" + @.id else "/public_html/CS464/server/companies.php"
+    if @.id then "~am01780/CS464/server/companies.php?id=" + @.id else "~am01780/CS464/server/companies.php"
 
   initialize: () ->
 
