@@ -11,7 +11,15 @@ class Cs464.Routers.Companies extends Backbone.Router
   initialize: ->
     @collection = new Cs464.Collections.Queries()
     @companies = new Cs464.Collections.Companies()
-
+    newCompany = new Cs464.Models.Company
+    newCompany.on('sync', =>
+      @companies.fetch()
+      @table.render()
+    )
+    @form = new Cs464.Views.CompanyFormView(
+      model: newCompany
+    )
+    @form.setContainer(@)
     # @.on('refresh', ->
     #   alert('refresh')
     #   @companies.fetch()
@@ -34,17 +42,8 @@ class Cs464.Routers.Companies extends Backbone.Router
     @table = new Cs464.Views.TableView(['Id','Company name', 'Address', 'Date Creation', 'Country', 'Edit', 'Delete'], ['company_id', 'company_name', 'hq_address', 'date_creation', 'country'], @companies, "#companies")
     @companies.fetch()
 
-    newCompany = new Cs464.Models.Company
-    newCompany.on('sync', =>
-      @companies.fetch()
-      @table.render()
-    )
-
     new Cs464.Views.QueryList(links).render()
-    @form = new Cs464.Views.CompanyFormView(
-      model: newCompany
-    )
-    @form.setContainer(@)
+    
     @form.render()
 
   update: (id) ->

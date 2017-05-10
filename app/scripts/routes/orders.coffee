@@ -34,6 +34,7 @@ class Cs464.Routers.Orders extends Backbone.Router
 
   query5: () ->
     new Cs464.Views.TableView(['Email'], ['email'], @collection)
+
     @collection.fetch({data: {query: 5}})
 
   query6: () ->

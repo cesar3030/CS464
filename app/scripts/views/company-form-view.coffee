@@ -9,7 +9,7 @@ class Cs464.Views.CompanyFormView extends Backbone.View
   tagName: 'form'
 
   events: {
-    "click #submitBtn": "createUpdateCompany"
+    'submit form': 'createUpdateCompany'
     "click #cancelBtn": "clearForm"
   }
 
@@ -21,7 +21,8 @@ class Cs464.Views.CompanyFormView extends Backbone.View
   render: () ->
     @$el.html @template(@model)
 
-  createUpdateCompany: () ->
+  createUpdateCompany: (e) ->
+    e.preventDefault()
     message = "Company added!"
     if @model.get('company_id') != undefined
       @model.set('id', @model.get('company_id'))
