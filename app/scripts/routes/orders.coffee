@@ -30,6 +30,7 @@ class Cs464.Routers.Orders extends Backbone.Router
       }
     ]
     new Cs464.Views.QueryList(links).render()
+    $("#form").html ""
 
   query5: () ->
     new Cs464.Views.TableView(['Email'], ['email'], @collection)

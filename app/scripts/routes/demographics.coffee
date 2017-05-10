@@ -24,6 +24,7 @@ class Cs464.Routers.Demographics extends Backbone.Router
       }
     ]
     new Cs464.Views.QueryList(links).render()
+    $("#form").html ""
 
   query4: () ->
     new Cs464.Views.TableView(['Country 1', 'Country 2', 'State'], ['A.country', 'B.country', 'A.state'], @collection)

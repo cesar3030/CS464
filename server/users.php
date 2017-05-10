@@ -12,5 +12,3 @@ if ($_SERVER['REQUEST_METHOD'] == "GET"){
   $statement->setFetchMode(PDO::FETCH_ASSOC);
   echo json_encode($statement->fetchAll());
 }
-
-?>

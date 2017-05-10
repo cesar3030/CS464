@@ -19,6 +19,7 @@ $ ->
   new Cs464.Routers.Orders()
   new Cs464.Routers.Demographics()
   new Cs464.Routers.Companies()
+  new Cs464.Routers.Categories()
   # collection = new Cs464.Collections.Users()
   
   # # table = new Cs464.Views.UsersView

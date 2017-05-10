@@ -1,3 +1,7 @@
 <% attributes.forEach(function(attribute) { %>
 <td><%= model.get(attribute) %></td>
 <% }); %>
+<% if(actionUrl != ''){%>
+  <td><a href="<%=actionUrl%>/edit/<%=model.get('company_id')%>">Edit</a></td>
+  <td><a href="<%=actionUrl%>/delete/<%=model.get('company_id')%>">Delete</a></td>
+<%}%>

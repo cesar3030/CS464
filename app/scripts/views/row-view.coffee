@@ -14,12 +14,11 @@ class Cs464.Views.RowView extends Backbone.View
 
   events: {}
 
-  constructor: (@attributesToDisplay, @model) ->
-    # alert(JSON.stringify(@columns))
+  constructor: (@attributesToDisplay, @model, @actionUrl = '') ->
     super()
 
   initialize: () ->
     @listenTo @model, 'change', @render
 
   render: () ->
-    @$el.html @template(attributes: @attributesToDisplay, model: @model)
+    @$el.html @template(attributes: @attributesToDisplay, model: @model, actionUrl: @actionUrl)

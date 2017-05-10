@@ -14,7 +14,7 @@ class Cs464.Views.RowsView extends Backbone.View
 
   events: {}
   
-  constructor: (@modelAttributes, @collection) ->
+  constructor: (@modelAttributes, @collection, @actionUrl = '') ->
     super()
 
   initialize: () ->
@@ -31,7 +31,7 @@ class Cs464.Views.RowsView extends Backbone.View
     # if @collection.length == 0 then @addNoResult()
 
   addRow: (row) ->
-    rowView = new Cs464.Views.RowView(@modelAttributes, row)
+    rowView = new Cs464.Views.RowView(@modelAttributes, row, @actionUrl)
     #$(@el).find("tbody").append(rowView.render())
     $(@el).append(rowView.render())
 

@@ -35,6 +35,7 @@ class Cs464.Routers.Products extends Backbone.Router
       }
     ]
     new Cs464.Views.QueryList(links).render()
+    $("#form").html ""
 
   query3: () ->
     new Cs464.Views.TableView(['Product id','Price'], ['product_id', 'price'], @collection)
