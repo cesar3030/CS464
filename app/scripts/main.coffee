@@ -1,4 +1,3 @@
-#window.serverUrl = "http://localhost"
 window.Cs464 =
   Models: {}
   Collections: {}
@@ -8,7 +7,6 @@ window.Cs464 =
   init: ->
     'use strict'
     console.log 'Hello from Backbone!'
-    window.serverUrl = "https://www.cs.unm.edu/~am01780/CS464"
 
 $ ->
   'use strict'
