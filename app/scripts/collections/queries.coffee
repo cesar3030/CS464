@@ -2,4 +2,4 @@
 
 class Cs464.Collections.Queries extends Backbone.Collection
   model: Cs464.Models.Query
-  url: '/server/queries.php'
+  url: 'public_html/CS464/server/queries.php'
