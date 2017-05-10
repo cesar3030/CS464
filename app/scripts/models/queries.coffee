@@ -1,7 +1,7 @@
 'use strict';
 
 class Cs464.Models.Query extends Backbone.Model
-  url: "www.cs.unm.edu/~am01780/CS464/server/queries.php",
+  url: "/server/queries.php",
 
   initialize: () ->
 
