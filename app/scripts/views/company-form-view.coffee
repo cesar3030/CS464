@@ -14,13 +14,16 @@ class Cs464.Views.CompanyFormView extends Backbone.View
   }
 
   initialize: () ->
-
+    
+  setContainer: (view) ->
+    @view = view
+    
   render: () ->
     @$el.html @template(@model)
 
   createUpdateCompany: () ->
     message = "Company added!"
-    if @model.get('company_id') != ''
+    if @model.get('company_id') != undefined
       @model.set('id', @model.get('company_id'))
       message = "Company updated!"
 
@@ -43,7 +46,11 @@ class Cs464.Views.CompanyFormView extends Backbone.View
     $("#name").val("")
     $("#address").val("")
     $("#date").val("")
-    @setModel(new Cs464.Models.Company)
+    model = new Cs464.Models.Company
+    model.on('sync', =>
+      @view.reloadCompanies()
+    )
+    @setModel(model)
 
   setModel: (newModel) ->
     @model = newModel

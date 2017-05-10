@@ -3,10 +3,10 @@
 class Cs464.Routers.Products extends Backbone.Router
   
   routes:
-    'products':         'index'
-    'products/query/3': 'query3'
-    'products/query/8': 'query8'
-    'products/query/10': 'query10'
+    'products':           'index'
+    'products/query/3':   'query3'
+    'products/query/8':   'query8'
+    'products/query/10':  'query10'
 
   initialize: ->
     @collection = new Cs464.Collections.Queries()

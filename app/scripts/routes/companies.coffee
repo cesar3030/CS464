@@ -44,6 +44,7 @@ class Cs464.Routers.Companies extends Backbone.Router
     @form = new Cs464.Views.CompanyFormView(
       model: newCompany
     )
+    @form.setContainer(@)
     @form.render()
 
   update: (id) ->
@@ -71,7 +72,9 @@ class Cs464.Routers.Companies extends Backbone.Router
     model.set('id', id)
     model.destroy()
 
-
+  reloadCompanies: ->
+    @companies.fetch()
+    @table.render()
 
   query11: () ->
     new Cs464.Views.TableView(['Company Name', 'Number of products'], ['company_name', 'Number of products'], @collection)
