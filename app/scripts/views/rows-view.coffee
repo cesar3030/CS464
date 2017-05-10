@@ -2,7 +2,7 @@
 
 class Cs464.Views.RowsView extends Backbone.View
 
-  el: "#page"
+  #el: "#page"
 
   template: JST['app/scripts/templates/rows-view.ejs']
 
@@ -13,7 +13,8 @@ class Cs464.Views.RowsView extends Backbone.View
   className: ''
 
   events: {}
-  constructor: (@modelAttributes, @collection) ->
+  
+  constructor: (@modelAttributes, @collection, @actionUrl = '') ->
     super()
 
   initialize: () ->
@@ -24,12 +25,18 @@ class Cs464.Views.RowsView extends Backbone.View
 
 
   render: () ->
-    @$el.find('tbody').remove()
-    @$el.find('table').append @template()
+    # @$el.find('tbody').remove()
+    # @$el.find('table').append @template()
+    @$el.html @template()
+    # if @collection.length == 0 then @addNoResult()
 
   addRow: (row) ->
-    rowView = new Cs464.Views.RowView(@modelAttributes, row)
-    $(@el).find("tbody").append(rowView.render())
+    rowView = new Cs464.Views.RowView(@modelAttributes, row, @actionUrl)
+    #$(@el).find("tbody").append(rowView.render())
+    $(@el).append(rowView.render())
+
+  addNoResult: () ->
+    $(@el).append("<tr><td colspan='"+@modelAttributes.length+"'>No result</td></tr>")
 
   addAllRows: () ->
     @render()
