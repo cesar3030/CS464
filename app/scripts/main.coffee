@@ -1,4 +1,5 @@
-window.serverUrl = "http://localhost"
+#window.serverUrl = "http://localhost"
+window.serverUrl = "https://www.cs.unm.edu/~am01780/CS464"
 window.Cs464 =
   Models: {}
   Collections: {}
