@@ -1,0 +1,4 @@
+Team:
+
+Satyanarayana Gopu : 50% --took care of the backend
+Cesar Jeanroy : 50% -- took care of the front-end
